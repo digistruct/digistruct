@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./api
+    container_name: digistruct_api
+    volumes:
+      - ./api:/go/src/app
+    ports:
+      - 8080:8080
+  react:
+    build:
+      context: ./react
+    container_name: digistruct_react
+    volumes:
+      - ./react:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3000:3000
