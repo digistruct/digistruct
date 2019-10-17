@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from 'reactstrap'
 
 function Counter() {
     const [count, setCount] = useState(0)
@@ -6,12 +7,12 @@ function Counter() {
     return (
         <div>
             <p>You clicked {count} times</p>
-            <button onClick={() => setCount(count + 1)}>
+            <Button color="primary" onClick={() => setCount(count + 1)}>
                 click
-            </button>
-            <button onClick={() => setCount(0)}>
+            </Button>
+            <Button color="danger" onClick={() => setCount(0)}>
                 reset
-            </button>
+            </Button>
         </div>
     )
 }
